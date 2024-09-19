@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnSum(View view) {
         Number result;
+        textError.setText("");
         if (!inputFirst.getText().toString().equals("") && !inputSecond.getText().toString().equals("")) {
             result = Double.parseDouble(inputFirst.getText().toString()) + Double.parseDouble(inputSecond.getText().toString());
             textRes.setText(result.toString());
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnMin(View view) {
         Number result;
+        textError.setText("");
         if (!inputFirst.getText().toString().equals("") && !inputSecond.getText().toString().equals("")) {
             result = Double.parseDouble(inputFirst.getText().toString()) - Double.parseDouble(inputSecond.getText().toString());
             textRes.setText(result.toString());
@@ -51,10 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnDel(View view) {
         Number result;
+        textError.setText("");
         if (!inputFirst.getText().toString().equals("") && !inputSecond.getText().toString().equals("")) {
             if (!inputSecond.getText().toString().equals("")) {
             result = Double.parseDouble(inputFirst.getText().toString()) / Double.parseDouble(inputSecond.getText().toString());
-            textRes.setText(result.toString());
+            String result_d = String.format("%.3f",result);
+            textRes.setText(result_d);
             znak.setText("/");} else {
                 textError.setText("На ноль делить нельзя");
             }
@@ -65,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnMult(View view) {
         Number result;
+        textError.setText("");
         if (!inputFirst.getText().toString().equals("") && !inputSecond.getText().toString().equals("")) {
             result = Double.parseDouble(inputFirst.getText().toString()) * Double.parseDouble(inputSecond.getText().toString());
             textRes.setText(result.toString());
@@ -72,5 +77,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             textError.setText("Введите числа");
         }
+    }
+
+    public void btnResFunc(View view) {
+        textError.setText("");
+        znak.setText("");
+        inputFirst.setText(null);
+        inputSecond.setText(null);
+        textRes.setText("Результат");
     }
 }

@@ -30,10 +30,10 @@
 
             <TextView
                 android:id="@+id/textZnak"
-                android:layout_width="wrap_content"
+                android:layout_width="32dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp" />
+                android:textAlignment="center"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/InputSecond"
